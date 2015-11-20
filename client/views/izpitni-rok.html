@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../fonts/style.css">
+    <script src="../data/index.js"></script>
+    <title>Studentski informacijski sistem</title>
+    <script>
+        var stPrijav = 0;
+        $(document).ready(function() {
+            $.getJSON("../data/prijave.json", function(data) {
+                for(i in data) {
+                    stPrijav++;
+                    $("#pregled-prijav").append('<tr><td>'+data[i]["vpisna"]+'</td><td>'+data[i]["ime"]+'</td><td>'+data[i]["priimek"]+'<td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td></tr>');
+                }
+                $("#stPrijav").append('<tr><th>Število prijavljenih študentov</th></tr><tr><td>'+ stPrijav +'</td></tr>');
+             });
+        });
+
+    </script>
+</head>
+<body>
+
+    <div class="header">
+        <a href="profesor.html">
+            <img src="../fonts/LogotipUL_M.gif" style="margin-left: 10%; margin-right: 10px; float: left; height: 90px;">
+        </a>
+        <p class="imeFakulteta">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+        <div class="idProfesor">
+            <p>Profesor Profesor</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default" style="margin-top: 5%">
+            <div class="panel-heading">
+                <h3>Operacijski sistemi</h3>
+                <h4>26.1.2016 09:00</h4>
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-12">
+                        <table class="table table-hover" id="pregled-prijav">
+                            <thead>
+                                <tr>
+                                    <th>Vpisna stevilka</th>
+                                    <th>Ime</th>
+                                    <th>Priimek</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                        </table>
+                    </div>
+                    <div class="col-md-3">
+                        <table class="table table-hover" id="stPrijav"></table>
+                    </div>
+                </div>
+                <a href="profesor.html" id="gumb-nazaj"><span class="glyphicon glyphicon-menu-left"></span>Nazaj</a>
+            </div>
+        </div>
+        <p style="float: right"><b>FRRZČ</b>           |  študijski informacijski sistem</p>
+    </div>
+</body>
+</html>

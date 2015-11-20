@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/demo.js"></script>
+    <title>Studentski informacijski sistem</title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-static-top header">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="student.html">
+                    <img alt="Brand" src="../img/LogotipUL_M.gif" style="height: 90px;">
+                </a>
+
+            </div>
+            <p class="navbar-left navbar-text">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+            <a href="../index.html" class="navbar-text navbar-right glyphicon-logoff"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+            <p class="navbar-right navbar-text idUporabnik">Denis Grabljevec</br>Vpisna številka: 63120183</p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default" style="margin-top: 5%;">
+            <div class="panel-heading">
+                <h2>Osebni podatki</h2>
+                <p>Pregled in spreminanje podatkov. Podatke obarvane s sivo barvo ne morete spreminjati.</br>Geslo lahko spremenite na ID portalu Univerze v Ljubljani. Sivo obarvane podatke pa lahko spremenite samo v študentskem referatu. </p>
+            </div>
+            <div class="panel-body" style="padding-top: 20px">
+                <form action="post">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="border-bottom-style: dotted; border-bottom-color: midnightblue; border-bottom-width: 1px; font-weight: bold; padding-bottom: 2px;">Osnovni podatki</h4>
+                        </div>
+                    </div>
+
+                    <div class="form-group" style="margin-bottom: 20px;">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-12">
+                                <label for="vpisnaSt">Vpisna številka:</label>
+                                <input class="form-control" id="vpisnaSt" disabled value="63120183">
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="ime">Ime:</label>
+                                <input class="form-control" id="ime" disabled value="Denis">
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="priimek">Priimek:</label>
+                                <input class="form-control" id="priimek" disabled value="Grabljevec">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 14px;">
+                            <div class="col-md-4 col-xs-12">
+                                <label for="emso">EMŠO številka:</label>
+                                <input class="form-control" id="emso" value="0702993500024" disabled>
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="email">Email:</label>
+                                <input class="form-control" id="email" disabled value="dg5121@student.uni-lj.si">
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="telefonskaSt">Telefonska številka:</label>
+                                <input class="form-control" id="telefonskaSt" value="040 135 333">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h4 style="border-bottom-style: dotted;  border-bottom-color: midnightblue; border-bottom-width: 1px; font-weight: bold; padding-bottom: 2px;">Podatki o naslovu</h4>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="row">
+                            <div class="col-md-4 col-xs-12">
+                                <label for="naslov">Naslov:</label>
+                                <input class="form-control" id="naslov" value="Ljubljanska cesta 65">
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="postnaSt">Poštna številka:</label>
+                                <input class="form-control" id="postnaSt" value="1230">
+                            </div>
+                            <div class="col-md-4 col-xs-12">
+                                <label for="ime">Mesto:</label>
+                                <input class="form-control" id="mesto" value="Domžale">
+                            </div>
+                        </div>
+                        <div class="row" style="margin-top: 14px;">
+                            <div class="col-md-4 col-xs-12">
+                                <label for="drzava">Država:</label>
+                                <input class="form-control" id="drzava" value="Slovenija">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-group">
+						<span>
+							<button type="button" id="shrani-podatke" class="btn izpit-prijava" onclick="preveriPodatke()"><span class="glyphicon glyphicon-floppy-save"></span> Shrani</button>
+							<a class="btn" href="student.html" id="gumb-nazaj"><span class="glyphicon glyphicon-menu-left"></span>Nazaj</a>
+						</span>
+                        <p id="shrani" style="display: none;"></p>
+                    </div>
+
+
+                </form>
+
+
+            </div>
+        </div>
+        <p style="float: right"><b>FRRZČ</b>           |  študijski informacijski sistem</p>
+    </div>
+</body>
+</html>

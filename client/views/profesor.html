@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../fonts/style.css">
+    <script src="../data/index.js"></script>
+    <title>Studentski informacijski sistem</title>
+</head>
+<body>
+
+    <div class="header">
+        <a href="profesor.html">
+            <img src="../fonts/LogotipUL_M.gif" style="margin-left: 10%; margin-right: 10px; float: left; height: 90px;">
+        </a>
+        <p class="imeFakulteta">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+        <div class="idProfesor">
+            <p>Profesor Profesor</p>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="panel panel-default" style="margin-top: 5%">
+            <div class="panel-body">
+                <div class="row" style="clear: both; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Aktivni razpisani roki</h4>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom: 20px; display: none;">
+                        <p style="padding-left: 5%;">&lt;Trenutno nimate razpisanih izpitnih rokov&gt;</p>
+                    </div>
+                    <div class="col-md-12" style="margin-bottom: 20px; overflow-x: auto;">
+                        <table class="table table-hover" id="razpisani-roki">
+                            <tr>
+                                <td>Operacijski sistemi</td>
+                                <td>26.1.2016</td>
+                                <td>09:00</td>
+                                <td>P22</td>
+                                <td style="width: 5%;"><a type="button" href="izpitni-rok.html" class="btn btn-xs"><span class="glyphicon glyphicon-search"></span> Pregled prijav</a></td>
+                                <td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td>
+                            </tr>
+                        </table>
+                    </div>
+
+                </div>
+                <div class="row" style="overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Razpisite nov izpitni rok</h4>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 40px;">
+                    <div class="col-md-4 col-sm-12">
+                        <label for="predmet">Predmet</label>
+                        <select class="form-control" id="predmet">
+                            <option>Izberite predmet..</option>
+                            <option>Operacijski sistemi</option>
+                            <option>Algoritmi in podatkovne strukture</option>
+                            <option>Elektronsko poslovanje</option>
+                        </select>
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="datum-izpita">Datum</label>
+                        <input class="form-control" type="date" id="datum-izpita">
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="cas-izpita">Čas</label>
+                        <input class="form-control" type="time" id="cas-izpita">
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <label for="predavalnica">Predavalnica</label>
+                        <input class="form-control" id="predavalnica">
+                    </div>
+                    <div class="col-md-2 col-sm-12">
+                        <button onclick="dodajRazpis()" class="btn izpit-prijava" style="margin-top: 25px; margin-left: 10px;"><span class="glyphicon glyphicon-plus"></span> Dodaj</button>
+                        <p id="opozorilo1" style="display: none;"><span class="label label-danger">Niste vnesli vseh podatkov</span></p>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Predmeti</h4>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th>Sifra predmeta</th>
+                                    <th>Predmet</th>
+                                    <th>Stevilo prijavljenih</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>63120</td>
+                                    <td>Operacijski sistemi</td>
+                                    <td><b>125</b></td>
+                                </tr>
+                                <tr>
+                                    <td>63118</td>
+                                    <td>Algoritmi in podatkovne strukture 1</td>
+                                    <td><b>114</b></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Vpis točk vaj in kolokvijev</h4>
+                    </div>
+                    <form action="post">
+                        <div class="col-md-12">
+                            <div class="col-md-3 col-sm-12">
+                                <label for="studentId">Vpisna številka študenta</label>
+                                <input name="vpisnaStudenta" class="form-control" id="studentId">
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <label for="predmet1">Predmet</label>
+                                <select name="predmet1" class="form-control" id="predmet1">
+                                    <option>Izberite predmet..</option>
+                                    <option>Operacijski sistemi</option>
+                                    <option>Algoritmi in podatkovne strukture</option>
+                                </select>
+                            </div>
+                            <div class="col-md-2 col-sm-12" id="vpisi">
+                                <button type="button" onclick="tockeVpis()" class="btn izpit-prijava" style="margin-top: 25px;">Vpiši</button>
+                                <p id="opozorilo"></p>
+                            </div>
+                        </div>
+                        <div class="col-md-12" style="margin-top: 20px; display: none;" id="vpisTock">
+                            <div class="col-md-2 col-sm-12">
+                                <label for="tockeVaj">Vpis točk vaj</label>
+                                <input name="tockeVaj" class="form-control" id="tockeVaj">
+                            </div>
+                            <div class="col-md-2 col-sm-12">
+                                <label for="tockeKol">Vpis točk kolokvijev</label>
+                                <input name="tockeKol" class="form-control" id="tockeKol">
+                            </div>
+                            <div class="col-md-2 col-sm-12" style="margin-top: 25px;">
+                                <input type="submit" class="btn izpit-prijava" value="Potrdi">
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p style="float: right; margin-bottom: 50px;"><b>FRRZČ</b>           |  študijski informacijski sistem</p>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/demo.js"></script>
+    <title>Studentski informacijski sistem</title>
+
+</head>
+<body>
+
+    <nav class="navbar navbar-static-top header">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="student.html">
+                    <img alt="Brand" src="../img/LogotipUL_M.gif" style="height: 90px;">
+                </a>
+
+            </div>
+            <p class="navbar-left navbar-text">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+            <a href="../index.html" class="navbar-text navbar-right glyphicon-logoff"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+            <p class="navbar-right navbar-text idUporabnik">Denis Grabljevec</br>Vpisna številka: 63120183</p>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="panel panel-default" style="margin-top: 5%;">
+            <div class="panel-heading">
+                <h3>Prijava in odjava od izpita</h3>
+            </div>
+            <div class="panel-body">
+                <div class="row" style="clear: both; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Aktivne prijave na izpit</h4>
+                    </div>
+                    <div class="col-md-12" style="display: none;">
+                        <p style="padding-left: 5%;">&lt;Trenutno niste prijavljeni na noben izpit&gt;</p>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover" >
+                            <tbody>
+                                <tr>
+                                    <td>63106</td>
+                                    <td>Razvoj informacijskih sistemov</td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="2.06">Marko Bajec</span></td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="Ob 13:00 v P1">27.1.2016</span></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td>
+                                </tr>
+								<tr>
+                                    <td>63110</td>
+                                    <td>Tehnologija upravljanja podatkov</td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="2.43">Matjaž Kukar</span></td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="Ob 10:00 v P22">29.1.2016</span></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="row" style="margin-bottom: 20px; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 class="border-pike">Razpisani izpitni roki</h4>
+                    </div>
+                    <div class="col-md-12" style="display: none;">
+                        <p style="padding-left: 5%;">&lt;Trenutno ni nobenega razpisanega izpitnega roka&gt;</p>
+                    </div>
+                    <div class="col-md-12">
+                        <table class="table table-hover">
+                            <tbody>
+                                <tr>
+                                    <td>63106</td>
+                                    <td>Razvoj informacijskih sistemov</td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="2.06">Marko Bajec</span></td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="Ob 13:00 v P1">27.1.2016</span></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-prijava"><span class="glyphicon glyphicon-plus"></span> Prijava</button></td>
+                                </tr>
+                                <tr>
+                                    <td>63111</td>
+                                    <td>Spletno programiranje</td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="2.11">Aleš Smrdel</span></td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="Ob 09:00 v P22">30.1.2016</span></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-prijava"><span class="glyphicon glyphicon-plus"></span> Prijava</button></td>
+                                </tr>
+                                <tr>
+                                    <td>63110</td>
+                                    <td>Tehnologija upravljanja podatkov</td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="2.43">Matjaž Kukar</span></td>
+                                    <td><span data-toggle="tooltip" data-html="true" data-placement="top" title="Ob 10:00 v P22">29.1.2016</span></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-prijava"><span class="glyphicon glyphicon-plus"></span> Prijava</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <a href="student.html" id="gumb-nazaj"><span class="glyphicon glyphicon-menu-left"></span>Nazaj</a>
+            </div>
+
+        </div>
+        <p style="float: right"><b>FRRZČ</b>           |  študijski informacijski sistem</p>
+    </div>
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>
+</body>
+</html>

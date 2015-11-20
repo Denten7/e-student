@@ -17,15 +17,15 @@ function vpis() {
     for(i in osebe) {
         if(uporIme == osebe[i]["email"] && geslo == osebe[i]["geslo"]){
             if(osebe[i]["id"] == "1") {
-                location.href="/Faza1-SP/views/student.html";
+                location.href="views/student.html";
                 return;
             }
             else if(osebe[i]["id"] == "2") {
-                location.href="/Faza1-SP/views/profesor.html";
+                location.href="views/profesor.html";
                 return;
             }
             else if(osebe[i]["id"] == "3") {
-                location.href="/Faza1-SP/views/studentski-referat.html";
+                location.href="views/studentski-referat.html";
                 return;
             }
         }
