@@ -1,0 +1,175 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url("img/white_windows_8_bubbles_background_by_gifteddeviant-d4wokeq.png");
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.vrstica:after {
+    content: "";
+    clear: both;
+    display: block;
+}
+
+@media only screen and (min-width: 768px){
+.vrstica-1 {width: 8.33%;}
+.vrstica-2 {width: 16.66%;}
+.vrstica-3 {width: 25%;}
+.vrstica-4 {width: 33.33%;}
+.vrstica-5 {width: 41.66%;}
+.vrstica-6 {width: 50%;}
+.vrstica-7 {width: 58.33%;}
+.vrstica-8 {width: 66.66%;}
+.vrstica-9 {width: 75%;}
+.vrstica-10 {width: 83.33%;}
+.vrstica-11 {width: 91.66%;}
+.vrstica-12 {width: 100%;}
+}
+
+
+@media only screen and (min-width: 600px){
+.vrstica-m-1 {width: 8.33%;}
+.vrstica-m-2 {width: 16.66%;}
+.vrstica-m-3 {width: 25%;}
+.vrstica-m-4 {width: 33.33%;}
+.vrstica-m-5 {width: 41.66%;}
+.vrstica-m-6 {width: 50%;}
+.vrstica-m-7 {width: 58.33%;}
+.vrstica-m-8 {width: 66.66%;}
+.vrstica-m-9 {width: 75%;}
+.vrstica-m-10 {width: 83.33%;}
+.vrstica-m-11 {width: 91.66%;}
+.vrstica-m-12 {width: 100%;}
+}
+
+
+
+.header {
+    background-color: midnightblue;
+    font-size: 20px;
+    height: 90px;
+    font-weight: bold;
+    font-family: Tahoma, Geneva, sans-serif;
+    color: white;
+
+}
+
+.imeFakulteta{
+    padding-top: 15px;
+    display:inline-block
+
+}
+
+.body-vpis{
+    margin: auto;
+    width: 650px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: #e2e2e2;
+    background-color: white;
+    margin-top: 40px;
+    font-family: Arial;
+
+
+}
+
+.napaka-vnos{
+    padding: 5px;
+    margin-bottom: 0px;
+    color: darkred;
+    background-color: white;
+    display: none;
+}
+
+#body-header{
+    font-family: Arial;
+    padding-left: 3%;
+}
+
+#body-opis{
+    margin-left: 3%;
+    margin-right: 3%;
+}
+
+.vpis{
+    margin: auto;
+    width: 50%;
+}
+
+.idUporabnik{
+    padding-top: 15px;
+    margin-right: 10%;
+    float: right;
+}
+
+.idProfesor{
+    padding-top: 35px;
+    margin-right: 10%;
+    float: right;
+}
+
+.izbirni-gumb{
+    border: 1px solid midnightblue;
+    border-radius: 5px;
+    color: midnightblue;
+}
+
+.izbirni-gumb:hover{
+    background-color: midnightblue;
+    color: white;
+    box-shadow: 10px 10px 5px grey;
+}
+
+.izpit-prijava{
+    background-color: midnightblue;
+    color: white;
+}
+
+.izpit-prijava:hover{
+    color: lightgrey;
+}
+
+.izpit-prijava:focus{
+    color: white;
+}
+
+.izpit-odjava{
+    background-color: darkred;
+    color: white
+}
+
+.izpit-odjava:hover{
+    color: lightgray;
+}
+
+#gumb-nazaj{
+    margin-top: 5px;
+    text-decoration: none;
+    color: midnightblue;
+}
+
+#gumb-nazaj:hover{
+    font-weight: bold;
+}
+
+.gumb-shrani{
+    margin-top: 5px;
+    background-color: midnightblue;
+    color: white;
+}
+
+.gumb-shrani:hover{
+    color: white;
+    background-color: #191930;
+}
+
+.border-pike{
+    border-bottom-style: dotted;
+    border-bottom-color: midnightblue;
+    border-bottom-width: 1px;
+    font-weight: bold;
+    padding-bottom: 2px;
+}
