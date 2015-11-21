@@ -16,7 +16,7 @@
             $.getJSON("../data/prijave.json", function(data) {
                 for(i in data) {
                     stPrijav++;
-                    $("#pregled-prijav").append('<tr><td>'+data[i]["vpisna"]+'</td><td>'+data[i]["ime"]+'</td><td>'+data[i]["priimek"]+'<td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td></tr>');
+                    $("#pregled-prijav").append('<tr><td>'+data[i]["vpisna"]+'</td><td>'+data[i]["ime"]+'</td><td>'+data[i]["priimek"]+'<td><input class="form-control" type="text" id="vpisTock" style="width: 80px;"></td><td><input class="form-control" type="text" id="ocena" style="width: 50px;"></td><td><button onclick="" class="btn btn-xs izpit-prijava"><span class="glyphicon glyphicon-pencil"></span> Vpiši</button></td></td><td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td></tr>');
                 }
                 $("#stPrijav").append('<tr><th>Število prijavljenih študentov</th></tr><tr><td>'+ stPrijav +'</td></tr>');
              });
@@ -57,6 +57,9 @@
                                     <th>Vpisna stevilka</th>
                                     <th>Ime</th>
                                     <th>Priimek</th>
+                                    <th>Vpis točk</th>
+                                    <th>Ocena</th>
+                                    <th></th>
                                     <th></th>
                                 </tr>
                             </thead>

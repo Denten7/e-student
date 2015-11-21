@@ -7,7 +7,20 @@
     <script src="../js/bootstrap.min.js"></script>
     <link rel = "stylesheet" type="text/css" href="../css/style.css">
     <script src="../js/demo.js"></script>
+    <link rel="stylesheet" href="../css/select2.css">
+	<link rel="stylesheet" href="../css/select2-bootstrap.css">
+	<script src="../js/select2.min.js"></script>
     <title>Studentski informacijski sistem</title>
+    
+    <script>
+        $(document).ready(function() {
+				$.getJSON("../data/drzave.json", function(seznamDrzav) {
+					$("#drzava").select2({
+						data: { results: seznamDrzav }
+					});
+				});
+        });
+    </script>
 
 </head>
 <body>
@@ -20,7 +33,7 @@
                 </a>
 
             </div>
-            <p class="navbar-left navbar-text">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+            <p class="navbar-left navbar-text fakulteta">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
             <a href="../index.html" class="navbar-text navbar-right glyphicon-logoff"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
             <p class="navbar-right navbar-text idUporabnik">Denis Grabljevec</br>Vpisna številka: 63120183</p>
         </div>
@@ -95,7 +108,7 @@
                         <div class="row" style="margin-top: 14px;">
                             <div class="col-md-4 col-xs-12">
                                 <label for="drzava">Država:</label>
-                                <input class="form-control" id="drzava" value="Slovenija">
+                                <input class="form-control" id="drzava" name="drzava" type="text" value="Slovenija">
                             </div>
                         </div>
                     </div>
