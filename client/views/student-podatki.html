@@ -13,12 +13,20 @@
     <title>Studentski informacijski sistem</title>
     
     <script>
+        var drzave = [];
         $(document).ready(function() {
-				$.getJSON("../data/drzave.json", function(seznamDrzav) {
-					$("#drzava").select2({
-						data: { results: seznamDrzav }
-					});
+            console.log("juhu");
+			$.getJSON("../data/drzave.json", function(seznamDrzav) {
+			    
+				drzave = seznamDrzav;
+				drzaveDropdown = [];
+				for (i in seznamDrzav) {
+					drzaveDropdown[i] = {id: seznamDrzav[i]["drzava"], text: seznamDrzav[i]["drzava"] + ''}
+				}
+				$("#drzava").select2({
+					data: { results: drzaveDropdown }
 				});
+			});
         });
     </script>
 
