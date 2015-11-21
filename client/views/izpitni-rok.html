@@ -2,12 +2,14 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel = "stylesheet" type="text/css" href="../fonts/style.css">
-    <script src="../data/index.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/demo.js"></script>
     <title>Studentski informacijski sistem</title>
+
+
     <script>
         var stPrijav = 0;
         $(document).ready(function() {
@@ -21,18 +23,24 @@
         });
 
     </script>
+    
 </head>
 <body>
+    
+    <nav class="navbar navbar-static-top header">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="student.html">
+                    <img alt="Brand" src="../img/LogotipUL_M.gif" style="height: 90px;">
+                </a>
 
-    <div class="header">
-        <a href="profesor.html">
-            <img src="../fonts/LogotipUL_M.gif" style="margin-left: 10%; margin-right: 10px; float: left; height: 90px;">
-        </a>
-        <p class="imeFakulteta">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
-        <div class="idProfesor">
-            <p>Profesor Profesor</p>
+            </div>
+            <p class="navbar-left navbar-text">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+            <a href="../index.html" class="navbar-text navbar-right glyphicon-logoff"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+            <p class="navbar-right navbar-text idUporabnik">Profesor</br>Profesor</p>
+            
         </div>
-    </div>
+    </nav>
 
     <div class="container">
         <div class="panel panel-default" style="margin-top: 5%">
@@ -65,3 +73,4 @@
     </div>
 </body>
 </html>
+

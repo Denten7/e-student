@@ -2,46 +2,49 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <link rel = "stylesheet" type="text/css" href="../fonts/style.css">
-    <script src="../data/index.js"></script>
+    <script src="../js/jquery.min.js"></script>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <script src="../js/bootstrap.min.js"></script>
+    <link rel = "stylesheet" type="text/css" href="../css/style.css">
+    <script src="../js/demo.js"></script>
     <title>Studentski informacijski sistem</title>
-    <script>
-        $(document).ready(function(){
-            $('[data-toggle="tooltip"]').tooltip();
-        });
-    </script>
+
+
 </head>
 <body>
+    
+    <nav class="navbar navbar-static-top header">
+        <div class="container">
+            <div class="navbar-header">
+                <a href="student.html">
+                    <img alt="Brand" src="../img/LogotipUL_M.gif" style="height: 90px;">
+                </a>
 
-    <div class="header">
-        <a href="profesor.html">
-            <img src="../fonts/LogotipUL_M.gif" style="margin-left: 10%; margin-right: 10px; float: left; height: 90px;">
-        </a>
-        <p class="imeFakulteta">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
-        <div class="idProfesor">
-            <p>Študentski referat</p>
+            </div>
+            <p class="navbar-left navbar-text">Fakulteta za raziskovanje rude</br> in zapravljanje časa</p>
+            <a href="../index.html" class="navbar-text navbar-right glyphicon-logoff"><span class="glyphicon glyphicon-log-out" aria-hidden="true"></span></a>
+            <p class="navbar-right navbar-text idUporabnik">Referat</br>Referat</p>
+            
         </div>
-    </div>
+    </nav>
 
     <div class="container">
         <div class="panel panel-default" style="margin-top: 5%">
             <div class="panel-body">
-                <div class="row" style="margin-bottom: 20px;">
+                <div class="row" style="margin-bottom: 20px;"  id="iskalnik">
                     <div class="col-md-12">
                         <h4 class="border-pike">Poišči študenta</h4>
                     </div>
                     <form>
                         <div class="col-md-3">
                             <input type="text" class="form-control" id="isciStudenta" placeholder="Vpisna številka">
-                            <input type="button" id="student" value="Išči" class="btn izpit-prijava" style="margin-top: 10px">
+                            <input type="button" id="student" value="Išči" class="btn izpit-prijava" style="margin-top: 10px" onclick="najdiStudenta()">
+                            <p id="opozorilo"></p>
                         </div>
                     </form>
                 </div>
 
-                <div class="pstudent">
+                <div class="pstudent" style="display: none;">
                     <div class="row">
                         <div class="col-md-12">
                             <h4 class="border-pike">Denis Grabljevec, 63120183</h4>
@@ -105,8 +108,11 @@
                             <input class="form-control" id="drzava" value="Slovenija">
                         </div>
                     </div>
+                    <button type="button" id="shrani-podatke" class="btn izpit-prijava" onclick="preveriPodatke()"><span class="glyphicon glyphicon-floppy-save"></span> Shrani</button>
+                    <p id="shrani" style="display: none;"></p>
+                    
 
-                    <div class="row" style="clear: both; overflow-x: auto;">
+                    <div class="row" style="clear: both; overflow-x: auto; margin-top: 20px;">
                         <div class="col-md-12">
                             <h4 class="border-pike">Aktivne prijave na izpit</h4>
                         </div>
@@ -180,3 +186,10 @@
 
 </body>
 </html>
+
+
+    <script>
+        $(document).ready(function(){
+            $('[data-toggle="tooltip"]').tooltip();
+        });
+    </script>

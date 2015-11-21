@@ -10,6 +10,7 @@ var osebe = [
     {"email": "referat", "geslo": "referat", "id": "3"}
 ];
 
+
 function vpis() {
     var uporIme = $("#uporIme").val();
     var geslo = $("#geslo").val();
@@ -35,7 +36,7 @@ function vpis() {
 
 function preveriPodatke(){
     var str = $("#telefonskaSt").val();
-    var patt1 = /^[0-9]{3}\s[0-9]{3}\s[0-9]{3}$/;
+    var patt1 = /^[0][3457][01]\s[0-9]{3}\s[0-9]{3}$/;
     var result = patt1.test(str);
 
     str = $("#postnaSt").val();
@@ -172,5 +173,21 @@ function pokazi(a) {
     setTimeout(function() {
         $("#shrani").fadeOut(1500)
     }, 5000);
+}
+
+function najdiStudenta() {
+    var vpisnaSt = $("#isciStudenta").val();
+    var reg = /^[0-9]{8}$/;
+    var rezultat = reg.test(vpisnaSt);
+    
+    if(rezultat == false) {
+        $("#isciStudenta").css("border-color", "darkred");
+        $("#opozorilo").html('<span class="label label-danger" style="margin-top: 25px;">Vpisali ste napačno vpisno številko</span>');
+    }
+    else if(rezultat == true) {
+        $("#iskalnik").hide();
+        $(".pstudent").show();
+    }
+    
 }
 
