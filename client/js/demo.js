@@ -191,3 +191,57 @@ function najdiStudenta() {
     
 }
 
+function shraniStudentSpremembe() {
+    var vpisnaSt = $("#vpisnaSt").val();
+    var reg = /^[0-9]{8}$/;
+    var rezultat = reg.test(vpisnaSt);
+    
+    var emso = $("#emso").val();
+    var reg1 = /^[0-9]{13}$/;
+    var rezultat1 = reg1.test(emso);
+    
+    var telSt = $("#telefonskaSt").val();
+    var reg2 = /^[0][3457][01]\s[0-9]{3}\s[0-9]{3}$/;
+    var rezultat2 = reg2.test(telSt);
+    
+    var postnaSt = $("#poštnaŠt").val();
+    var reg3 = /^[0-9]{4}$/;
+    var rezultat3 = reg3.test(postnaSt);
+    
+    if(rezultat == false) {
+        $("#vpisnaSt").css("border-color", "darkred");
+    }
+    else {
+        $("#vpisnaSt").css("border-color", "#ccc");
+    }
+    
+    if(rezultat1 == false) {
+        $("#emso").css("border-color", "darkred");
+    }
+    else {
+        $("#emso").css("border-color", "#ccc");
+    }
+    
+    if(rezultat2 == false) {
+        $("#telefonskaSt").css("border-color", "darkred");
+    }
+    else {
+        $("#telefonskaSt").css("border-color", "#ccc");
+    }
+    
+    if(rezultat3 == false) {
+        $("#poštnaŠt").css("border-color", "darkred");
+    }
+    else {
+        $("#poštnaŠt").css("border-color", "#ccc");
+    }
+    
+    if(rezultat == false || rezultat1 == false || rezultat2 == false || rezultat3 == false) {
+        $("#shrani").html('<span class="label label-danger" style="margin-top: 25px;">Vpisali ste napačne podatke.</span>');
+    }
+    else{
+        $("#shrani").html('<span class="label label-success" style="margin-top: 25px;">Podatki so se uspešno shranili.</span>');
+    }
+    
+}
+
