@@ -1,16 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html ng-app="demoApp">
 <head>
     <meta charset="UTF-8">
+    <script src="../js/angular.min.js"></script>
     <script src="../js/jquery.min.js"></script>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
     <script src="../js/bootstrap.min.js"></script>
     <link rel = "stylesheet" type="text/css" href="../css/style.css">
     <script src="../js/demo.js"></script>
+    <script src="../js/app.js"></script>
     <title>Studentski informacijski sistem</title>
 
 
-    <script>
+    <!--<script>
         var stPrijav = 0;
         $(document).ready(function() {
             $.getJSON("../data/prijave.json", function(data) {
@@ -22,7 +24,7 @@
              });
         });
 
-    </script>
+    </script>-->
     
 </head>
 <body>
@@ -48,8 +50,21 @@
                 <h3>Operacijski sistemi</h3>
                 <h4>26.1.2016 09:00</h4>
             </div>
-            <div class="panel-body">
-                <div class="row">
+            
+            <div class="panel-body" ng-controller="SimpleController">
+                <div class="row" style="margin-bottom: 20px;">
+                    <div class="col-md-12">
+                        <h4 style="border-bottom-style: dotted; border-bottom-color: midnightblue; border-bottom-width: 1px; font-weight: bold; padding-bottom: 2px;">Poišči študenta</h4>
+                    </div>
+                    <div class="col-md-3">
+                        <input type="text" class="form-control" placeholder="Vpisna številka študenta" ng-model="vpisna">
+                    </div>
+                </div>
+                
+                <div class="row" style="clear: both; overflow-x: auto;">
+                    <div class="col-md-12">
+                        <h4 style="border-bottom-style: dotted; border-bottom-color: midnightblue; border-bottom-width: 1px; font-weight: bold; padding-bottom: 2px;">Prijavljeni študenti</h4>
+                    </div>
                     <div class="col-md-12">
                         <table class="table table-hover" id="pregled-prijav">
                             <thead>
@@ -63,10 +78,32 @@
                                     <th></th>
                                 </tr>
                             </thead>
+                            <tbody>
+                                <tr ng-repeat="x in prijavljeni | filter:vpisna">
+                                    <td>{{ x.vpisnaSt }}</td>
+                                    <td>{{ x.ime }}</td>
+                                    <td>{{ x.priimek }}</td>
+                                    <td><input class="form-control" type="text" id="vpisTock" style="width: 80px;"></td>
+                                    <td><input class="form-control" type="text" id="ocena" style="width: 50px;"></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-prijava"><span class="glyphicon glyphicon-pencil"></span> Vpiši</button></td>
+                                    <td><button onclick="" class="btn btn-xs izpit-odjava"><span class="glyphicon glyphicon-trash"></span> Odjava</button></td>
+                                </tr>
+                            </tbody>
                         </table>
                     </div>
                     <div class="col-md-3">
-                        <table class="table table-hover" id="stPrijav"></table>
+                        <table class="table table-hover" id="stPrijav">
+                            <thead>
+                                <tr>
+                                    <th>Število prijavljenih študentov</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>{{ stPrijav1 }}</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
                 <a href="profesor.html" id="gumb-nazaj"><span class="glyphicon glyphicon-menu-left"></span>Nazaj</a>
